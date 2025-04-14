@@ -1,0 +1,119 @@
+Solução com MSYS2:
+
+    Baixe e instale o MSYS2:
+        Site oficial: https://www.msys2.org/.
+        Siga as instruções de instalação.
+
+    Atualize os pacotes: Após instalar, abra o terminal do MSYS2 (MSYS2 UCRT64) e execute:
+	pacman -Syu
+
+Obs.: eu usei o MSYS2 UCRT64 (https://www.msys2.org/docs/environments/)
+      se não funcionar, sugiro usar o MSYS2 MINGW64, mas os nomes dos pacotes são diferentes
+
+
+Para instalar as versões UCRT dos pacotes
+    pacman -S mingw-w64-ucrt-x86_64-gcc
+    pacman -S mingw-w64-ucrt-x86_64-assimp
+
+    pacman -S mingw-w64-ucrt-x86_64-freeglut
+    pacman -S mingw-w64-ucrt-x86_64-devil
+
+    pacman -Syu (caso precise)
+
+Para instalar as versões MINGW64 dos pacotes
+    pacman -S mingw-w64-x86_64-gcc
+    pacman -S mingw-w64-x86_64-assimp
+
+    pacman -S mingw-w64-x86_64-freeglut
+    pacman -S mingw-w64-x86_64-devil
+
+    pacman -Syu (caso precise)
+
+_____________________________________________________________________
+
+
+
+Alguns detalhes sobre as listas de pacotes resumidas acima:
+-----------------------------------------------------------
+
+Para instalar as versões UCRT dos pacotes MinGW e Assimp, você deve usar os nomes de pacotes que incluem "ucrt" em seu identificador. Isso garante que os pacotes sejam compatíveis com o ambiente UCRT no MSYS2.
+
+1. MinGW UCRT (Compilador e Ferramentas)
+
+Use o seguinte comando para instalar o MinGW UCRT:
+
+    pacman -S mingw-w64-ucrt-x86_64-gcc
+
+Isso instala o gcc, g++ e outras ferramentas associadas, compatíveis com o ambiente UCRT.
+
+2. Assimp UCRT
+
+Para instalar a biblioteca Assimp no ambiente UCRT, utilize:
+
+    pacman -S mingw-w64-ucrt-x86_64-assimp
+
+3. Verificar Outras Bibliotecas
+
+Caso precise de mais bibliotecas relacionadas ao MinGW ou Assimp, sempre prefira os pacotes que começam com mingw-w64-ucrt-x86_64-, pois são otimizados para o ambiente UCRT. Por exemplo:
+
+Para OpenGL:
+
+    pacman -S mingw-w64-ucrt-x86_64-freeglut
+
+Para DevIL:
+
+    pacman -S mingw-w64-ucrt-x86_64-devil
+
+Para SDL (mas não estou usando!):
+
+    pacman -S mingw-w64-ucrt-x86_64-SDL2 mingw-w64-ucrt-x86_64-SDL2_image
+
+
+_____________________________________________________________________
+
+
+
+
+
+
+
+
+1. Posso usar o novo g++ no terminal comum?
+
+Não diretamente. O g++ instalado via MSYS2 está localizado no ambiente MSYS2, e para usá-lo no terminal comum (como o PowerShell ou CMD), você precisa adicionar o caminho do compilador às variáveis de ambiente do sistema.
+
+O caminho típico para o compilador é:
+
+C:\msys64\mingw64\bin (no meu caso, C:\msys64\ucrt64\bin)
+
+Para adicionar ao PATH:
+
+    Abra Configurações do Windows > Sistema > Sobre > Configurações avançadas do sistema.
+    Clique em Variáveis de ambiente.
+    No campo Path em "Variáveis do sistema":
+        Clique em Editar.
+        Adicione C:\msys64\mingw64\bin. (no meu caso, C:\msys64\ucrt64\bin)
+    Confirme e reinicie o terminal.
+
+Agora, você pode usar o g++ diretamente no CMD ou PowerShell.
+
+
+
+
+2. Forma alternativa para adicionar os caminhos ao PATH
+
+Para tornar as ferramentas do MSYS2 acessíveis fora do terminal do MSYS2:
+
+    Abra as configurações do sistema:
+        Pressione Win + R, digite sysdm.cpl e pressione Enter.
+
+    Acesse as variáveis de ambiente:
+        Vá para a aba Avançado e clique em Variáveis de Ambiente.
+
+    Edite o PATH:
+        No painel de variáveis do sistema, encontre a variável Path, selecione-a e clique em Editar.
+        Adicione os caminhos relevantes:
+
+    C:\msys64\ucrt64\bin
+
+Clique em OK para salvar.

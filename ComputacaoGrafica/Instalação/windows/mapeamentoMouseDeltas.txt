@@ -1,0 +1,4 @@
+zerar os deltas só com o idle não funcionou no windows
+tive que adicionar código para detectar quando o mouse parava de mover
+tinha testado uma solução anterior usando o timer, mas mascarou um problema que demorei bastante para resolver,
+pois essa solução dependia da complexidade da cena sendo renderizada

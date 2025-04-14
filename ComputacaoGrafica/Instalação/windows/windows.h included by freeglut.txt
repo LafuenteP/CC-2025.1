@@ -1,0 +1,13 @@
+Não precisa incluir windows.h junto com glut.h, pois freeglut instalado no MSYS2 já inclui!
+
+deixar extra.h e model3ds.h como estava no ubuntu ( sem #include <windows.h> )
+
+//#include <windows.h>
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
+#include <GL/glut.h>
+#endif
+
+//#include <windows.h>
+#include <GL/glut.h>

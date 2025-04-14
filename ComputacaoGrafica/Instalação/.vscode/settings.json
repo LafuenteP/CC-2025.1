@@ -1,0 +1,13 @@
+{
+    "terminal.integrated.env.windows": {
+      // "PATH": "/c/msys64/mingw64/bin;${env:PATH}"
+    },
+    "terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\bash.exe",
+    "files.associations": {
+      "memory": "cpp",
+      "random": "cpp",
+      "istream": "cpp",
+      "optional": "cpp"
+    }
+}
+  

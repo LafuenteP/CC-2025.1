@@ -1,0 +1,7 @@
+Baixe e instale o vscode:
+    Site oficial: https://code.visualstudio.com/.
+    Siga as instruções de instalação.
+
+Copilot:
+    No vscode, pressionar Ctrl + Shift + I
+    Fazer login com conta GitHub education já autorizada
