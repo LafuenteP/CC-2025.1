@@ -1,0 +1,81 @@
+<!--AULA SOBRE LAYOUT'S-->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8"/>
+    <link id="theme" rel="stylesheet" href="Aula8CSS1.css" />
+</head>
+
+
+<body>
+    <h1>Múltiplos Layouts </h1>
+    <h3>Layout número <span id="num">1</span></h3>
+    <button onclick="layout_01()">Layout 1</button>
+    <button onclick="layout_02()">Layout 2</button>
+    <button onclick="toggle()">Toggle</button>
+    <button onclick="circular()">Circular</button>
+    
+    <p id="p1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio odit error, dolorem omnis, quasi sit repellendus vero, et labore sequi mollitia dignissimos ducimus autem! Eaque voluptate cum eius eos temporibus?</p>
+    <p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, voluptates molestiae quidem cupiditate aut ipsum omnis dolorum eum pariatur ipsam amet laborum porro quod? Esse error ad sapiente dolorum vero.</p>
+    <p id="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, voluptates molestiae quidem cupiditate aut ipsum omnis dolorum eum pariatur ipsam amet laborum porro quod? Esse error ad sapiente dolorum vero.</p>
+    <p id="p4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, voluptates molestiae quidem cupiditate aut ipsum omnis dolorum eum pariatur ipsam amet laborum porro quod? Esse error ad sapiente dolorum vero.</p>
+
+    <script>
+        function layout_01(){
+            let link = document.getElementById("theme");
+            link.href = "Aula8CSS1.css";
+        }
+        function layout_02(){
+            let link = document.getElementById("theme");
+            link.href = "Aula8CSS2.css";
+        }
+
+        let flag_layout = true;
+        function toggle(){
+            let link = document.getElementById("theme");
+            if(flag_layout){
+                link.href = "Aula8CSS2.css";
+            }else{
+                link.href = "Aula8CSS1.css";
+            }
+            flag_layout = !flag_layout;
+        }
+
+        let index=1;
+        function circular(){
+            let link = document.getElementById("theme");
+            link.href = `Aula8CSS${index+1}.css`;
+            document.getElementById("num").innerHTML = (index + 1);
+            index = (index +1) % 4;
+        }
+    </script>
+
+    <!--
+    
+    Notas:
+    (*) é chamado seletor coringa nas classes, pois ele chama
+    todas as  tags, por exemplo:
+
+    (*){
+        text-align = "center";
+    }
+
+    alinha todos os textos
+
+    posso especificar para qual tag é a classe que estou criando,
+    colocando a classe antes do "." de criar a classe, por exemplo:
+    p.text{
+    }
+
+    isso seria uma classe que só afeta paragrafos, ou seja, se eu fizer
+    um <div class="text"></div, não será afetado.
+        
+    
+    -->
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2698/2698194.png">
+  <link rel="stylesheet" href="Atividade4.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Energia Solar</title>
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Energia Solar</h1>
+    <p>Uma alternativa sustentável para o futuro.</p>
+  </header>
+
+  <!-- NAVBAR com botão sanduíche e modo escuro -->
+  <nav>
+    <!-- Botão sanduíche (aparece apenas em telas pequenas) -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Links de navegação -->
+    <div class="menu" id="menu">
+      <a href="#">Início</a>
+      <a href="#">Vantagens</a>
+      <a href="#">Desvantagens</a>
+      <a href="#">Contato</a>
+    </div>
+
+    <!-- Botão de modo escuro -->
+    <button class="toggle-dark" onclick="toggleDarkMode()">🌙</button>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main>
+  <article>
+    <h2>O que é Energia Solar?</h2>
+    <p>A energia solar é a energia proveniente da luz e do calor do sol, captada por painéis fotovoltaicos ou coletores térmicos. É limpa, renovável e abundante.</p>
+
+    <h2>Como Funciona?</h2>
+    <p>Os painéis solares captam a luz solar e a convertem em eletricidade por meio de células fotovoltaicas. Essa energia pode ser utilizada diretamente ou armazenada em baterias.</p>
+
+    <h2>Tipos de Painéis Solares</h2>
+<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+  <!-- Monocristalino -->
+  <section style="flex: 1; min-width: 250px;">
+    <img src="https://lh4.googleusercontent.com/proxy/K6aCgGN-5RQaACSgyHfftKnKgZ7oYJ2R_QH-Q5H9MxhQszr6-7TzYDeTwuUivA1fdaGhiDuLL8SJ6sP0FDQX7pGWzPC5v-jnWkWljUzOYuvneQHbUVwYBZLYcYJxpjCx4NL2HPjF-AE8L34hndbfe6-4QTah8-kv85lYIMmWw3zO8nr3Hw-Zot_iEKw-" 
+         alt="Painel solar monocristalino" 
+         style="width: 100%; border-radius: 8px;">
+    <p><strong>Monocristalino:</strong> Alta eficiência, ideal para espaços pequenos.</p>
+  </section>
+
+  <!-- Policristalino -->
+  <section style="flex: 1; min-width: 250px;">
+    <img src="https://images.tcdn.com.br/img/img_prod/404854/painel_solar_260w_313_1_20151008100542.jpg" 
+         alt="Painel solar policristalino" 
+         style="width: 100%; border-radius: 8px;">
+    <p><strong>Policristalino:</strong> Custo menor, eficiência intermediária.</p>
+  </section>
+
+  <!-- Filme Fino -->
+  <section style="flex: 1; min-width: 250px;">
+    <img src="https://i0.wp.com/www.ocaenergia.com/wp-content/uploads/2020/07/filme-fino.jpg?fit=752%2C440&ssl=1&w=640" 
+         alt="Painel solar de filme fino" 
+         style="width: 100%; border-radius: 8px;">
+    <p><strong>Filme Fino:</strong> Flexível e leve, mas menos eficiente.</p>
+  </section>
+</div>
+
+
+    <h2>Estatísticas</h2>
+    <div class="stats-container">
+    <div class="stat-card">
+        <h3>95%</h3>
+        <p>de economia possível na conta de luz</p>
+    </div>
+    <div class="stat-card">
+        <h3>6º lugar</h3>
+        <p>Brasil no ranking mundial de energia solar</p>
+    </div>
+    <div class="stat-card">
+        <h3>+2 milhões</h3>
+        <p>de sistemas solares instalados no Brasil</p>
+    </div>
+    </div>
+
+
+    <h2>Perguntas Frequentes (FAQ)</h2>
+    <details>
+      <summary>Energia solar funciona em dias nublados?</summary>
+      <p>Sim, mas a produção é menor. Ainda assim, há geração de energia.</p>
+    </details>
+    <details>
+      <summary>Preciso de baterias para usar energia solar?</summary>
+      <p>Não. O sistema pode estar conectado à rede elétrica (on-grid).</p>
+    </details>
+    <details>
+      <summary>Quanto tempo dura um painel solar?</summary>
+      <p>Em média 25 anos, com baixa manutenção.</p>
+    </details>
+  </article>
+
+  <aside>
+    <h3>Curiosidades</h3>
+    <p>Uma residência com energia solar pode economizar até 95% na conta de luz.</p>
+    <p>O Brasil é o 6º maior produtor de energia solar do mundo.</p>
+    <h3>Dica Verde 🌱</h3>
+    <p>Além da energia solar, utilize lâmpadas LED e reduza o consumo de água para mais sustentabilidade.</p>
+  </aside>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Energia Solar Brasil - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Alterna o modo escuro
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    // Alterna a visibilidade do menu (só funciona em telas pequenas)
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: #ffffff;
+      color: #000000;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+    }
+
+    header {
+      background-color: #FDB813;
+      padding: 2rem;
+      text-align: center;
+      color: white;
+    }
+
+    /* NAVBAR padrão em desktop */
+    nav {
+      background-color: #333;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+    }
+
+    .menu {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem;
+    }
+
+    .menu a:hover {
+      background-color: #555;
+      border-radius: 4px;
+    }
+
+    .toggle-dark {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 0.4rem 0.6rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Botão sanduíche escondido por padrão */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background-color: white;
+      height: 3px;
+      margin: 4px 0;
+      width: 25px;
+    }
+
+    /* Estilo responsivo */
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        margin-top: 0.5rem;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1rem;
+    }
+
+    article {
+      flex: 3;
+      padding: 1rem;
+    }
+
+    aside {
+      flex: 1;
+      background-color: #f4f4f4;
+      padding: 1rem;
+    }
+
+    body.dark-mode aside {
+      background-color: #1f1f1f;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .stats-container {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+
+        .stat-card {
+        flex: 1;
+        min-width: 200px;
+        padding: 1rem;
+        border-radius: 8px;
+        background-color: #fffbe6; /* cor clara padrão */
+        color: #333;
+        transition: background-color 0.3s ease;
+        }
+
+        /* Modo escuro */
+        body.dark .stat-card {
+        background-color: #444421;
+        color: #fff9c0;
+        }
