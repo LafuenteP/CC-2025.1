@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <title>Questão 3</title>
+    <style>
+        .divcentralizada{
+            display: flex;
+            justify-content: center; /* Alinha no centro HORIZONTAL */
+            align-items: center;     /* Alinha no centro VERTICAL */
+            height: 100vh;           /* Ocupa a altura total da janela */
+            background-color: lightblue;
+        }
+        .botoes{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="divcentralizada">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg", id="pokemon">
+        
+    </div>
+    <div class="botoes">
+        <button onclick="anterior()">Anterior</button>
+        <button onclick="proximo()">Próximo</button>
+    
+    </div>
+
+    <script>
+        let i = 1;
+        function proximo(){
+            i++;
+            if(i>100)
+                i = 1;
+            document.getElementById("pokemon").src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/"+i+".svg";
+        }
+        function anterior(){
+            i--;
+            if (i <= 0)
+                i = 100;
+            document.getElementById("pokemon").src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/"+i+".svg";
+        }
+
+    </script>
+</body>
+
+</html>
