@@ -1,0 +1,57 @@
+<!-- Usando fetch para acessar API-->
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <style>
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1 id="pokemonName">
+        Loading...
+    </h1>
+
+    <img id="pokemonImg" src="" alt=""/>
+    <img id="pokemonImgHD" src="" alt=""/>
+
+
+    <script>
+        function primeira_letra_maiuscula(str) {
+            let outStr = str
+            outStr = outStr.charAt(0).toUpperCase() + outStr.slice(1)
+            return outStr   
+        }
+
+        async function carregarPokemon(id) {
+            try{
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`) // esse await diz que espera ele pegar a resposta da API para colocar a respota na variável "response"
+                const data = await response.json()
+
+                let pokemonNameStr = data.name
+                let pokemonName = document.getElementById("pokemonName")
+                pokemonName.innerHTML = primeira_letra_maiuscula(pokemonNameStr)
+
+                let pokemonImg = document.getElementById("pokemonImg")
+                pokemonImg.src= data.sprites.front_default
+
+                let pokemonImgHD = document.getElementById("pokemonImgHD")
+                pokemonImgHD.src= data.sprites.other.dream_world.front_default
+            }
+            catch(error){
+                console.log(error)
+            }    
+        }
+        carregarPokemon(25);
+    </script>
+</body>
+
+
+</html>

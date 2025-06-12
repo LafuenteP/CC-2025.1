@@ -1,0 +1,54 @@
+
+<!-- Usando fetch para acessar API-->
+<!--//liberar o acesso
+    app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+    next();
+})-->
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <style>
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="professores">
+        Carregando...
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+       async function carregarProfessor(){
+            const response = await axios.get("http://localhost:3000/professores/listar");
+            //console.log(response);
+            let professoresDiv = document.getElementById("professores");
+            professoresDiv.innerHTML = "";
+            for (professor of response.data) {
+                let novaDiv = document.createElement("div")
+                novaDiv.innerHTML = `
+                    <h1>${professor.nome}</h1>
+                    <h3>${professor.titulo}</h3>
+                    <img src = '${professor.img}'/>
+                `
+
+                professoresDiv.appendChild(novaDiv)
+            }
+       }
+
+       carregarProfessor();
+    </script>
+</body>
+
+
+</html>
